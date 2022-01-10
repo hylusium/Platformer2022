@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputActionMapWrapper: {fileID: 11400000, guid: e8daf777ebdc62246864a6127518cef6, type: 2}
-  _useMouseForRightDirection: 0
+  _useMouseForLookDirection: 0
 --- !u!114 &8794679050676698220
 MonoBehaviour:
   m_ObjectHideFlags: 0
