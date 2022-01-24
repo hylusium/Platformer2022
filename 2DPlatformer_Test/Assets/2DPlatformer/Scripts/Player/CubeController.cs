@@ -118,8 +118,8 @@ namespace GSGD2.Player
 		[SerializeField]
 		private float _durationToDisableGroundRaycastWhenDashing = 0.5f;
 
-		[SerializeField]
-		private bool _resetDashCountWhenFalling = true;
+		//[SerializeField]
+		//private bool _resetDashCountWhenFalling = true;
 
 		[SerializeField]
 		private int _allowedDashCountWhenFalling = 1;

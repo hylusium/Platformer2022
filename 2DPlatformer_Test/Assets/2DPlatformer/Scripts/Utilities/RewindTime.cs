@@ -13,7 +13,7 @@ namespace GSGD2.Utilities
         private int _arrayLength = 0;
 
         [SerializeField]
-        private Transform[] debugArray = null;
+        private Transform[] _debugArray = null;
         // Transform Array for Rewind Get a value Of 5
         //
 
@@ -27,14 +27,23 @@ namespace GSGD2.Utilities
         {
             Transform[] _lastknownLocation = new Transform[_arrayLength];
 
-            debugArray = _lastknownLocation;
+            UpdatePos(_lastknownLocation);
+            
+        }
+
+
+        public Transform[] UpdatePos(Transform[] Vector)
+        {
+
+            _debugArray = Vector;
+            return Vector;
         }
 
 
 
         private void Update()
         {
-
+            
         }
 
         private void AddTransformToList()

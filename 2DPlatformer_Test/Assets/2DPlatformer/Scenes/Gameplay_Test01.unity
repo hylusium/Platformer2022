@@ -5195,7 +5195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45943501467049744, guid: dbf0cb5d47ca4d04291280bd165f62a6, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 45943501467049746, guid: dbf0cb5d47ca4d04291280bd165f62a6, type: 3}
       propertyPath: m_RootOrder
@@ -5268,7 +5268,7 @@ PrefabInstance:
     - target: {fileID: 45943501467049750, guid: dbf0cb5d47ca4d04291280bd165f62a6, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 13badc7e507b74f44b5d4ba463307d27, type: 2}
+      objectReference: {fileID: 9100000, guid: 894abbaf133cb1a4f99c52b350ec702e, type: 2}
     - target: {fileID: 45943501467049751, guid: dbf0cb5d47ca4d04291280bd165f62a6, type: 3}
       propertyPath: m_Name
       value: Character.Tall
@@ -16147,6 +16147,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerReferences: {fileID: 263294576}
   _endJumpDownwardSpeedThresholdWhenGrounded: 5
+--- !u!114 &908468610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908468591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrayLength: 3
+  _debugArray: []
 --- !u!114 &908468611
 MonoBehaviour:
   m_ObjectHideFlags: 0

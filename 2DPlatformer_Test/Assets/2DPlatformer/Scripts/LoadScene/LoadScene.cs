@@ -9,8 +9,8 @@ namespace GSGD2.Utilities
     public class LoadScene : MonoBehaviour
     {
 
-        [SerializeField]
-        private LoadSceneComponent _loadscenecomponent = null;
+        //[SerializeField]
+        //private LoadSceneComponent _loadscenecomponent = null;
 
        
 

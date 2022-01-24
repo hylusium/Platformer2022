@@ -7,8 +7,8 @@ namespace GSGD2.Gameplay
 
     public class Zipeline : MonoBehaviour
     {
-        [SerializeField]
-        private Transform _entryPoint = null;
+        //[SerializeField]
+        //private Transform _entryPoint = null;
         [SerializeField]
         private Transform _exitPoint = null;
         [SerializeField]

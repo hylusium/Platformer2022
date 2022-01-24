@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Shop : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text = null;
+    //[SerializeField] private TextMeshProUGUI _text = null;
 
     UnityEvent ShowShopMessage;
 
