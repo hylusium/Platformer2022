@@ -2832,7 +2832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e082cc84880824098621e570c6d8c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entryPoint: {fileID: 867001721}
   _exitPoint: {fileID: 1058207280}
   _playerpos: {fileID: 908468592}
   speed: 2.13
@@ -3266,7 +3265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de156eb0ce2049443b9e2fec8b39ede5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadscenecomponent: {fileID: 213997946}
 --- !u!1 &231410774
 GameObject:
   m_ObjectHideFlags: 0
@@ -13260,7 +13258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07768bdc9d514514781966a75a02a36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 1460003974}
 --- !u!1 &732979811
 GameObject:
   m_ObjectHideFlags: 0
@@ -16159,8 +16156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrayLength: 3
-  _debugArray: []
+  _arrayLength: 5
+  _debugArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  _self: {fileID: 908468592}
 --- !u!114 &908468611
 MonoBehaviour:
   m_ObjectHideFlags: 0

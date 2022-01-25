@@ -11,14 +11,17 @@ namespace GSGD2.Utilities
 
         [SerializeField]
         private int _arrayLength = 0;
-
+        // Transform Array for Rewind Get a value Of 5
         [SerializeField]
         private Transform[] _debugArray = null;
-        // Transform Array for Rewind Get a value Of 5
-        //
 
+        [SerializeField]
+        private Transform _self = null;
 
+        private int _rewindIndex = 0;
+        private Transform _transformTemp;
 
+        
 
         #endregion variables
 
@@ -26,17 +29,18 @@ namespace GSGD2.Utilities
         private void Start()
         {
             Transform[] _lastknownLocation = new Transform[_arrayLength];
-
-            UpdatePos(_lastknownLocation);
+            
+            UpdatePos(this.transform);
+           _transformTemp = (Transform)_debugArray.GetValue(0);
             
         }
 
 
-        public Transform[] UpdatePos(Transform[] Vector)
+        public Transform[] UpdatePos(Transform Vector)
         {
+            _debugArray.SetValue(Vector);
 
-            _debugArray = Vector;
-            return Vector;
+            return _debugArray;
         }
 
 
@@ -48,7 +52,7 @@ namespace GSGD2.Utilities
 
         private void AddTransformToList()
         {
-
+            
 
 
 
