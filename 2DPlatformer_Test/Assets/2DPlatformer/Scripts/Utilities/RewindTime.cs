@@ -10,7 +10,7 @@ namespace GSGD2.Utilities
         #region variables
 
         [SerializeField]
-<<<<<<< HEAD
+
         private int _arrayLength = 5;
 
 
@@ -26,18 +26,10 @@ namespace GSGD2.Utilities
 
 
         
-=======
-        private int _arrayLength = 0;
-        // Transform Array for Rewind Get a value Of 5
-        [SerializeField]
-        private Transform[] _debugArray = null;
 
-        [SerializeField]
-        private Transform _self = null;
+       
 
-        private int _rewindIndex = 0;
-        private Transform _transformTemp;
->>>>>>> 139ce5ab2bc0fcf26b6be2b7ccd7c1ef3e473a83
+     
 
         
 
@@ -46,7 +38,7 @@ namespace GSGD2.Utilities
 
         private void Start()
         {
-<<<<<<< HEAD
+
             // List<Part> parts = new List<Part>();
             List<Transform> _lastKnownLocation = new List<Transform>();
             UpdatePos(_lastKnownLocation);
@@ -56,22 +48,13 @@ namespace GSGD2.Utilities
         }
 
 
-        public List<Transform> UpdatePos(List<Transform> Vector)
-=======
-            Transform[] _lastknownLocation = new Transform[_arrayLength];
-            
-            UpdatePos(this.transform);
-           _transformTemp = (Transform)_debugArray.GetValue(0);
-            
-        }
-
-
-        public Transform[] UpdatePos(Transform Vector)
->>>>>>> 139ce5ab2bc0fcf26b6be2b7ccd7c1ef3e473a83
+        public List<Transform> UpdatePos(List<Transform> Vector) 
         {
-            _debugArray.SetValue(Vector);
 
-<<<<<<< HEAD
+
+            //_debugArray.SetValue(Vector);
+
+
             Debug.Log("Ouais la zone");
             if (Vector.Count >= _arrayLength)
             {
@@ -85,10 +68,12 @@ namespace GSGD2.Utilities
             }
             coroutinesOver = true;
             _debugArray = Vector;
-=======
->>>>>>> 139ce5ab2bc0fcf26b6be2b7ccd7c1ef3e473a83
+
             return _debugArray;
         }
+
+
+      
 
 
 
@@ -105,14 +90,12 @@ namespace GSGD2.Utilities
 
         private void AddTransformToList()
         {
-<<<<<<< HEAD
+
 
             StartCoroutine(PositionCD(_duration));
 
 
-=======
-            
->>>>>>> 139ce5ab2bc0fcf26b6be2b7ccd7c1ef3e473a83
+
 
         }
 
@@ -156,7 +139,7 @@ namespace GSGD2.Utilities
 
         }
 
-        // test
+       
 
     }
 
