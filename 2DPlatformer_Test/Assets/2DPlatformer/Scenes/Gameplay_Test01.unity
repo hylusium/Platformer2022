@@ -16157,9 +16157,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrayLength: 5
+<<<<<<< HEAD
   _duration: 3
   _debugArray:
   - {fileID: 0}
+=======
+  _debugArray:
+  - {fileID: 0}
+  - {fileID: 0}
+  _self: {fileID: 908468592}
+>>>>>>> 139ce5ab2bc0fcf26b6be2b7ccd7c1ef3e473a83
 --- !u!114 &908468611
 MonoBehaviour:
   m_ObjectHideFlags: 0
