@@ -16,13 +16,13 @@ namespace GSGD2.Utilities
         [SerializeField]
         private float _duration = 0;
 
+        [SerializeField] private float _rewindSpeed = 5f;
 
         [SerializeField]
         private List<Transform> _debugArray = null;
         private bool coroutinesOver = true;
         private int _arrayMinusOne;
 
-        [SerializeField] private float _rewindSpeed = 5f;
 
         
 
