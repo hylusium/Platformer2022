@@ -9,16 +9,33 @@ namespace GSGD2.Utilities
 
         #region variables
 
+
+        [SerializeField]
+        private int _arrayLength = 5;
+
+
+        [SerializeField]
+        private float _duration = 0;
+        [SerializeField] private float _rewindSpeed = 5f;
+        [SerializeField] private int _destinationTreshold = 2;
+
+
         [SerializeField] private int _arrayLength = 5;
         [SerializeField] private float _duration = 0;
         [SerializeField] private float _rewindSpeed = 5f;
         [SerializeField] private List<Transform> _debugArray = null;
 
+
         private Transform[] tempTransfoArray;
 
         private bool coroutinesOver = true;
         private int _arrayMinusOne;
-        
+
+        private int _arrayIndex = 0;
+
+
+
+
 
         #endregion variables
 
@@ -87,6 +104,19 @@ namespace GSGD2.Utilities
         private void RewindAction()
         {
 
+            Transform[] tempTransform = _debugArray.ToArray();
+            for (int i = 0; i < _arrayMinusOne; i++)
+            {
+
+                if (_arrayIndex < _arrayMinusOne)
+                {
+                    MoveToNextWaypoint(tempTransform[_arrayIndex].position);
+                    Debug.Log(_arrayIndex);
+                    _arrayIndex++;
+                    //testdebug
+                }
+
+
             _debugArray.Reverse();
             tempTransfoArray = _debugArray.ToArray();
             
@@ -94,14 +124,24 @@ namespace GSGD2.Utilities
             for (int i = 0; i < tempTransfoArray.Length -1; i++)
             {
                 tempTransfoArray.GetValue(i);
+
             }
             _debugArray.Clear();
 
         }
 
+
+
+        private void MoveToNextWaypoint(Vector3 nextWaypoint)
+        {
+            // Find Direction : direction = targetPosition - selfPosition;
+            transform.position += (nextWaypoint - transform.position) * _rewindSpeed * Time.deltaTime;
+            
+        }
+
        
 
-    }
 
+    }
 }
 
