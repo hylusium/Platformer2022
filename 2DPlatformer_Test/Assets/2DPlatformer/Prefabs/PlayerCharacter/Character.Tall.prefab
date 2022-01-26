@@ -555,6 +555,9 @@ GameObject:
   - component: {fileID: 908468610}
   - component: {fileID: 908468611}
   - component: {fileID: 1122874645}
+  - component: {fileID: 1161278340902574226}
+  - component: {fileID: 2368954540265320145}
+  - component: {fileID: 1798049321500619024}
   m_Layer: 0
   m_Name: Character.Tall
   m_TagString: Untagged
@@ -1194,6 +1197,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 634940147f4471c4dabd8b53e9e03310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1161278340902574226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed637416efa56a43a745651d873b181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerReferences: {fileID: 658029998098805078}
+  _endJumpDownwardSpeedThresholdWhenGrounded: 5
+--- !u!114 &2368954540265320145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrayLength: 5
+  _duration: 0
+  _rewindSpeed: 5
+  _debugArray: []
+--- !u!114 &1798049321500619024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaeb4d6b7e34f044ad3912b4c0dbc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _size: 0.25
+  _lifeTime: 10
+  _frequency: 2
 --- !u!1 &45943501639459713
 GameObject:
   m_ObjectHideFlags: 0
