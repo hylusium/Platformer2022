@@ -516,8 +516,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45943501399306451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1.024, z: 0}
+  m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_Children:
   - {fileID: 45943501639459712}
   m_Father: {fileID: 45943501467049746}
@@ -549,9 +549,15 @@ GameObject:
   - component: {fileID: 1281409253}
   - component: {fileID: 4548461259680535859}
   - component: {fileID: 1772138187070269183}
-  - component: {fileID: 349363936}
   - component: {fileID: 273068455644414413}
   - component: {fileID: 2386281391824443594}
+  - component: {fileID: 908468596}
+  - component: {fileID: 908468610}
+  - component: {fileID: 908468611}
+  - component: {fileID: 1122874645}
+  - component: {fileID: 1161278340902574226}
+  - component: {fileID: 2368954540265320145}
+  - component: {fileID: 1798049321500619024}
   m_Layer: 0
   m_Name: Character.Tall
   m_TagString: Untagged
@@ -647,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputActionMapWrapper: {fileID: 11400000, guid: e8daf777ebdc62246864a6127518cef6, type: 2}
-  _useMouseForLookDirection: 0
+  _useMouseForLookDirection: 1
 --- !u!114 &8794679050676698220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,32 +753,32 @@ MonoBehaviour:
   _playerReferences: {fileID: 658029998098805078}
   _collider: {fileID: 1241346952}
   _maxVelocity: 50
-  _groundMoveSpeed: 9
-  _groundFriction: 11.62
-  _airMoveSpeed: 11
+  _groundMoveSpeed: 7
+  _groundFriction: 10
+  _airMoveSpeed: 6.9
   _ascendingGravityScale: 9
-  _descendingGravityScale: 12
+  _descendingGravityScale: 5
   _jump:
     enabled: 1
-    _maximumAllowedForcesWhileInAir: 1
-    resetVelocityWhenApplyingForceWhileInAir: 1
+    _maximumAllowedForces: 1
     cubeController: {fileID: 0}
     displacementEstimationUpdater: {fileID: 0}
     _gravityScale: 9
-    _jumpHeight: 3
+    _jumpHeight: 2.5
     _jumpHeightBonusWhenFalling: 1
     _jumpHeightBonusSpeedThreshold: 10
-  _changeToFallingStateWhenReleasingJump: 1
+  _changeToFallingStateWhenReleasingJump: 0
   _canJumpDuringDash: 1
   _durationToDisableGroundRaycastWhenJumping: 0.5
+  _resetJumpCountWhenFalling: 1
+  _allowedJumpCountWhenFalling: 0
   _resetJumpCountWhenWallJumping: 1
-  _allowedJumpCountWhenWallJumping: 1
+  _allowedJumpCountWhenWallJumping: 0
   _resetJumpCountWhenBumping: 1
-  _allowedJumpCountWhenBumping: 1
+  _allowedJumpCountWhenBumping: 0
   _dash:
     enabled: 1
-    _maximumAllowedForcesWhileInAir: 1
-    resetVelocityWhenApplyingForceWhileInAir: 1
+    _maximumAllowedForces: 1
     cubeController: {fileID: 0}
     displacementEstimationUpdater: {fileID: 0}
     _dashForce: 40
@@ -781,13 +787,15 @@ MonoBehaviour:
     _positionOffsetWhenEnteringDash: 0.1
     _debugMode: 0
   _durationToDisableGroundRaycastWhenDashing: 0.5
-  _wallRaycastDistanceWhenDashing: 3
+  _allowedDashCountWhenFalling: 1
+  _wallRaycastDistanceWhenDashing: 2.6
   _resetDashCountWhenWallJumping: 1
   _allowedDashCountWhenWallJumping: 1
   _resetDashJumpCountWhenBumping: 1
   _allowedDashCountWhenBumping: 1
+  _enableWallGrab: 1
   _wallJumpHeight: 3
-  _wallJumpWallNormalForce: 8
+  _wallJumpWallNormalForce: 5
   _wallGrabDisableDuration: 0.25
   _resetWallGrabDisableDurationWhenDashing: 1
   _durationToDisableControlDuringBump: 0.4
@@ -817,7 +825,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   _disableControlWhenDamageTaken:
-    _duration: 0.4
+    _duration: 0.2
   _debugMode: 0
 --- !u!114 &45943501467049744
 MonoBehaviour:
@@ -1033,7 +1041,7 @@ MonoBehaviour:
   DamageTaken_UnityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 349363936}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GSGD2.Utilities.DebugLog, Assembly-CSharp
         m_MethodName: Log
         m_Mode: 5
@@ -1095,18 +1103,6 @@ MonoBehaviour:
   - {fileID: 6656194247263435517}
   - {fileID: 1378026882}
   _takeDamageParticle: {fileID: 392571970}
---- !u!114 &349363936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 45943501467049751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be32dc41fb511447bcfdbc588ec183a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &273068455644414413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1144,6 +1140,108 @@ MonoBehaviour:
   _axis: 0
   _distance: 5
   _speed: 30
+--- !u!114 &908468596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed637416efa56a43a745651d873b181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerReferences: {fileID: 658029998098805078}
+  _endJumpDownwardSpeedThresholdWhenGrounded: 5
+--- !u!114 &908468610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrayLength: 3
+  _duration: 0
+  _rewindSpeed: 5
+  _debugArray: []
+--- !u!114 &908468611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaeb4d6b7e34f044ad3912b4c0dbc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _size: 0.25
+  _lifeTime: 10
+  _frequency: 2
+--- !u!114 &1122874645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 634940147f4471c4dabd8b53e9e03310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1161278340902574226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed637416efa56a43a745651d873b181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerReferences: {fileID: 658029998098805078}
+  _endJumpDownwardSpeedThresholdWhenGrounded: 5
+--- !u!114 &2368954540265320145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrayLength: 5
+  _duration: 0
+  _rewindSpeed: 5
+  _debugArray: []
+--- !u!114 &1798049321500619024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45943501467049751}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaeb4d6b7e34f044ad3912b4c0dbc85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _size: 0.25
+  _lifeTime: 10
+  _frequency: 2
 --- !u!1 &45943501639459713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1723,17 +1821,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  m_SelectedVertices: 00000000000000000000000000000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &6656194247263435517
 MeshRenderer:
   m_ObjectHideFlags: 0
