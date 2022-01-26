@@ -113,8 +113,7 @@ namespace GSGD2.Utilities
                     MoveToNextWaypoint(tempTransform[_arrayIndex].position);
                     Debug.Log(_arrayIndex);
                     _arrayIndex++;
-                    //discord test
-
+                    
                 }
             }
             _debugArray.Clear();
