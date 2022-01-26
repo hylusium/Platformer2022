@@ -15,16 +15,19 @@ namespace GSGD2.Utilities
 
         [SerializeField]
         private float _duration = 0;
+        [SerializeField] private float _rewindSpeed = 5f;
+        [SerializeField] private int _destinationTreshold = 2;
+
 
 
         [SerializeField]
         private List<Transform> _debugArray = null;
         private bool coroutinesOver = true;
         private int _arrayMinusOne;
+        private int _arrayIndex = 0;
 
-        [SerializeField] private float _rewindSpeed = 5f;
 
-        
+
 
 
         #endregion variables
@@ -101,30 +104,30 @@ namespace GSGD2.Utilities
 
         private void RewindAction()
         {
-
-            _debugArray.Reverse();
-            //foreach (Transform item in _debugArray)
-            //{
-
-
-
-            //    transform.position += item.position;
-            //        Debug.Log("lerp");
-
-
-            //}
-            //boucle for si ça marche pas 
-               
-            for (int i = 0; i < _debugArray.Count ; i++)
+            Transform[] tempTransform = _debugArray.ToArray();
+            for (int i = 0; i < _arrayMinusOne; i++)
             {
+
+                if (_arrayIndex < _arrayMinusOne)
+                {
+                    MoveToNextWaypoint(tempTransform[_arrayIndex].position);
+                    Debug.Log(_arrayIndex);
+                    _arrayIndex++;
+                    
+
+                }
             }
             _debugArray.Clear();
 
         }
 
 
-
+        private void MoveToNextWaypoint(Vector3 nextWaypoint)
+        {
+            // Find Direction : direction = targetPosition - selfPosition;
+            transform.position += (nextWaypoint - transform.position) * _rewindSpeed * Time.deltaTime;
+            
+        }
     }
-
 }
 
