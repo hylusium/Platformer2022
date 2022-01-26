@@ -9,7 +9,6 @@ namespace GSGD2.Utilities
 
         #region variables
 
-
         [SerializeField]
         private int _arrayLength = 5;
 
@@ -17,20 +16,13 @@ namespace GSGD2.Utilities
         [SerializeField]
         private float _duration = 0;
         [SerializeField] private float _rewindSpeed = 5f;
-        [SerializeField] private int _destinationTreshold = 2;
 
 
-        [SerializeField] private int _arrayLength = 5;
-        [SerializeField] private float _duration = 0;
-        [SerializeField] private float _rewindSpeed = 5f;
-        [SerializeField] private List<Transform> _debugArray = null;
 
-
-        private Transform[] tempTransfoArray;
-
+        [SerializeField]
+        private List<Transform> _debugArray = null;
         private bool coroutinesOver = true;
         private int _arrayMinusOne;
-
         private int _arrayIndex = 0;
 
 
@@ -46,16 +38,19 @@ namespace GSGD2.Utilities
             List<Transform> _lastKnownLocation = new List<Transform>();
             UpdatePos(_lastKnownLocation);
             _arrayMinusOne = _arrayLength - 1;
+
+
         }
 
 
-        public List<Transform> UpdatePos(List<Transform> Vector) 
+        public List<Transform> UpdatePos(List<Transform> Vector)
         {
+
             Debug.Log("Ouais la zone");
             if (Vector.Count >= _arrayLength)
             {
                 Debug.Log("Test");
-                Vector.RemoveAt(_arrayMinusOne);
+                Vector.RemoveAt(4);
                 Vector.Add(this.transform);
             }
             else
@@ -64,9 +59,10 @@ namespace GSGD2.Utilities
             }
             coroutinesOver = true;
             _debugArray = Vector;
-
             return _debugArray;
         }
+
+
 
         private void Update()
         {
@@ -81,7 +77,11 @@ namespace GSGD2.Utilities
 
         private void AddTransformToList()
         {
+
             StartCoroutine(PositionCD(_duration));
+
+
+
         }
 
         IEnumerator PositionCD(float duration)
@@ -103,7 +103,6 @@ namespace GSGD2.Utilities
 
         private void RewindAction()
         {
-
             Transform[] tempTransform = _debugArray.ToArray();
             for (int i = 0; i < _arrayMinusOne; i++)
             {
@@ -111,37 +110,29 @@ namespace GSGD2.Utilities
                 if (_arrayIndex < _arrayMinusOne)
                 {
                     MoveToNextWaypoint(tempTransform[_arrayIndex].position);
-                    Debug.Log(_arrayIndex);
                     _arrayIndex++;
                     //testdebug
                 }
-
-
-            _debugArray.Reverse();
-            tempTransfoArray = _debugArray.ToArray();
-            
-
-            for (int i = 0; i < tempTransfoArray.Length -1; i++)
-            {
-                tempTransfoArray.GetValue(i);
-
+                
+                
+                
             }
+            for (int i = 0; i < tempTransform.Length; i++)
+            {
+                tempTransform[i] = null;
+            }
+            
             _debugArray.Clear();
 
         }
 
 
-
         private void MoveToNextWaypoint(Vector3 nextWaypoint)
         {
             // Find Direction : direction = targetPosition - selfPosition;
-            transform.position += (nextWaypoint - transform.position) * _rewindSpeed * Time.deltaTime;
+            transform.position -= (nextWaypoint - transform.position) * _rewindSpeed * Time.deltaTime;
             
         }
-
-       
-
-
     }
 }
 
