@@ -15,7 +15,7 @@ namespace GSGD2.Utilities
 
         [SerializeField]
         private float _duration = 0;
-        [SerializeField] private float _rewindSpeed = 5f;
+        
 
 
 
@@ -50,7 +50,7 @@ namespace GSGD2.Utilities
             if (Vector.Count >= _arrayLength)
             {
                 Debug.Log("Test");
-                Vector.RemoveAt(4);
+                Vector.RemoveAt(0);
                 Vector.Add(this.transform.position);
             }
             else
@@ -104,20 +104,26 @@ namespace GSGD2.Utilities
         private void RewindAction()
         {
             Vector3[] tempTransform = _debugArray.ToArray();
-            for (int i = 0; i < _arrayMinusOne; i++)
-            {
+            //for (int i = 0; i < _arrayMinusOne; i++)
+            //{
 
+               
+                
+                
+                
+            //}
+            foreach (Vector3 item in tempTransform)
+            {
                 if (_arrayIndex < _arrayMinusOne)
                 {
                     MoveToNextWaypoint(tempTransform[_arrayIndex]);
                     _arrayIndex++;
-                    //testdebug
                 }
-                
-                
-                
             }
-            
+            for (int i = 0; i < _arrayMinusOne; i++)
+            {
+                tempTransform = null;
+            }
             
             _debugArray.Clear();
 
