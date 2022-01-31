@@ -22,6 +22,8 @@ namespace GSGD2.Player
         private const string USE_ITEM_ACTION_NAME = "UseItem";
         private const string GROUND_SMASH_ACTION_NAME = "GroundSmash";
         private const string REWIND_ACTION_NAME = "Rewind";
+        private const string RIGHT_MAP = "RightMap";
+        private const string LEFT_MAP = "LeftMap";
 
         [SerializeField]
         private InputActionMapWrapper _inputActionMapWrapper;
@@ -41,6 +43,8 @@ namespace GSGD2.Player
         private InputAction _useItemInputAction = null;
         private InputAction _groundSmashInputAction = null;
         private InputAction _rewindInputAction = null;
+        private InputAction _rightMapInputAction = null;
+        private InputAction _leftMapInputAction = null;
 
         public bool UseMouseForLookDirection => _useMouseForLookDirection;
         public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -59,6 +63,8 @@ namespace GSGD2.Player
         public event InputEvent UseItemPerformed = null;
         public event InputEvent GroundSmashPerformed = null;
         public event InputEvent RewindPerformed = null;
+        public event InputEvent RightMapPerformed = null;
+        public event InputEvent LeftMapPerformed = null;
 
         private void OnEnable()
         {
@@ -120,10 +126,19 @@ namespace GSGD2.Player
                 _rewindInputAction.performed += _rewindInputAction_performed;
 
             }
+            if (_inputActionMapWrapper.TryFindAction(RIGHT_MAP, out _rightMapInputAction, true) == true)
+            {
+                _rightMapInputAction.performed -= _rightMapInputAction_performed;
+                _rightMapInputAction.performed += _rightMapInputAction_performed;
+            }
+            if (_inputActionMapWrapper.TryFindAction(LEFT_MAP, out _leftMapInputAction, true) == true)
+            {
+                _leftMapInputAction.performed -= _leftMapInputAction_performed;
+                _leftMapInputAction.performed += _leftMapInputAction_performed;
+            }
         }
 
-
-
+       
         private void OnDisable()
         {
             _horizontalMoveInputAction.Disable();
@@ -139,6 +154,8 @@ namespace GSGD2.Player
             _useItemInputAction.Disable();
             _groundSmashInputAction.Disable();
             _rewindInputAction.Disable();
+            _rightMapInputAction.Disable();
+            _leftMapInputAction.Disable();
 
 
             _jumpInputAction.performed -= JumpInputAction_performed;
@@ -150,6 +167,8 @@ namespace GSGD2.Player
             _useItemInputAction.performed -= UseItemInputAction_performed;
             _groundSmashInputAction.performed -= GroundSmashInputAction_performed;
             _rewindInputAction.performed -= _rewindInputAction_performed;
+            _rightMapInputAction.performed -= _rightMapInputAction_performed;
+            _leftMapInputAction.performed -= _leftMapInputAction_performed;
         }
 
         private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -194,5 +213,14 @@ namespace GSGD2.Player
         {
             RewindPerformed?.Invoke(this, obj);
         }
+        private void _rightMapInputAction_performed(InputAction.CallbackContext obj)
+        {
+            RightMapPerformed?.Invoke(this, obj);
+        }
+        private void _leftMapInputAction_performed(InputAction.CallbackContext obj)
+        {
+            LeftMapPerformed?.Invoke(this, obj);
+        }
+
     }
 }
