@@ -105,6 +105,30 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: Rewind
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 17e29fd6-5511-44ec-ac9e-15defe1e3435
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: RightMap
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 70a07a9c-d548-4629-adc7-67c4fc0698cc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    - m_Name: LeftMap
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 431c53ae-53f4-407d-85fd-4df543ad824e
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -329,4 +353,52 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: GroundSmash
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e7fd6c86-7883-4892-b9c4-d26936eb8ba5
+      m_Path: <Gamepad>/rightShoulder
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rewind
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 218e2d91-9866-4009-82eb-b8dd04d0a35c
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Rewind
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 914c9355-95df-448c-a1fc-6ff6f9f89dc0
+      m_Path: <Gamepad>/dpad/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RightMap
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 22c489dd-56a3-468b-ab5b-3abbfadc7f35
+      m_Path: <Keyboard>/rightArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: RightMap
+      m_Flags: 0
+    - m_Name: 
+      m_Id: d84d97ab-a3b1-49ec-8a96-54be63326a67
+      m_Path: <Gamepad>/dpad/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: LeftMap
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e1ef6542-cdc8-4c19-a65c-e63c56df68b6
+      m_Path: <Keyboard>/leftArrow
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: LeftMap
       m_Flags: 0
