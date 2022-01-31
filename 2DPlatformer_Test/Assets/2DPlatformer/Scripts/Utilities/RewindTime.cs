@@ -9,55 +9,54 @@ namespace GSGD2.Utilities
 
         #region variables
 
-        [SerializeField] private int _arrayLength = 5;
-        [SerializeField] private float _duration = 0;
-        [SerializeField] private List<Vector3> _debugArray = null;
-       
+
+        [SerializeField] private float _refreshVectorDuration = 0;
+        [SerializeField] private float _rewindCooldown = 0;
+        [SerializeField] private Vector3 Vector3Debug;
+        [SerializeField] private GameObject RewindPreview = null;
+
+
 
         private bool coroutinesOver = true;
-        private int _arrayMinusOne;
-        private int _arrayIndex = 0;
+        private bool cooldownOver = true;
+
 
         #endregion variables
 
         private void Start()
         {
-            // List<Part> parts = new List<Part>();
-            List<Vector3> _lastKnownLocation = new List<Vector3>();
-            UpdatePos(_lastKnownLocation);
-            _arrayMinusOne = _arrayLength - 1;
+            RewindPreview.transform.position = transform.position;
+            UpdatePos(transform.position);
+
         }
 
-        public List<Vector3> UpdatePos(List<Vector3> Vector)
+        public Vector3 UpdatePos(Vector3 Vector)
         {
-            Debug.Log("Ouais la zone");
-            if (Vector.Count >= _arrayLength)
-            {
-                Debug.Log("Test");
-                Vector.RemoveAt(0);
-                Vector.Add(this.transform.position);
-            }
-            else
-            {
-                Vector.Add(this.transform.position);
-            }
+            Debug.Log(Vector);
+
             coroutinesOver = true;
-            _debugArray = Vector;
-            return _debugArray;
+            Vector3Debug = Vector;
+            RewindPreview.transform.position = Vector3Debug;
+            RewindPreview.SetActive(true);
+            return Vector3Debug;
+
+
         }
 
         private void Update()
         {
             AddTransformToList();
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(KeyCode.B) && cooldownOver == true)
             {
                 RewindAction();
+                StartCoroutine(RewindCoolDown(_rewindCooldown));
+                
             }
         }
 
         private void AddTransformToList()
         {
-            StartCoroutine(PositionCD(_duration));
+            StartCoroutine(PositionCD(_refreshVectorDuration));
         }
 
         IEnumerator PositionCD(float duration)
@@ -66,39 +65,32 @@ namespace GSGD2.Utilities
             {
                 coroutinesOver = false;
                 yield return new WaitForSeconds(duration);
-                UpdatePos(_debugArray);
+                UpdatePos(transform.position);
             }
+        }
+
+        IEnumerator RewindCoolDown(float duration)
+        {
+            if (cooldownOver == true)
+            {
+                cooldownOver = false;
+                yield return new WaitForSeconds(duration);
+                cooldownOver = true;
+
+            }
+
         }
 
         private void RewindAction()
         {
-            Vector3[] tempTransform = _debugArray.ToArray();
-
-            //for (int i = 0; i < _arrayMinusOne; i++)
-            //{
-
-            //}
-
-            for (int i = 0; i < tempTransform.Length; i++)
-            {
-                Debug.LogFormat("{0}, : valeur du tableau", tempTransform.GetValue(i));
-            }
-            foreach (Vector3 item in tempTransform)
-            {
-                if (_arrayIndex < _arrayMinusOne)
-                {
-                    MoveToNextWaypoint(item);
-                    _arrayIndex++;
-                }
-            }
-            //tempTransform = null;
-            _debugArray.Clear();
+            MoveToNextWaypoint(Vector3Debug);
         }
 
         private void MoveToNextWaypoint(Vector3 nextWaypoint)
         {
             // Find Direction : direction = targetPosition - selfPosition;
-            transform.position += (nextWaypoint - transform.position);
+            transform.position = nextWaypoint;
+            RewindPreview.SetActive(false);
         }
     }
 }
