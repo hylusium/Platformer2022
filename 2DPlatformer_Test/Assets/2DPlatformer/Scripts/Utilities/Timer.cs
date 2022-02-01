@@ -37,7 +37,12 @@
 		{
 			_currentState = State.Finished;
 		}
+		public void Stop()
+        {
+			_currentState = State.Stopped;
+			_timeElapsed = 0;
 
+        }
 		public void ResetTimeElapsed()
 		{
 			_timeElapsed = 0;

@@ -115,10 +115,10 @@ namespace GSGD2.Gameplay
 				case State.Highlighted:
 					break;
 				case State.Held:
-				{
-					_positionAtRelease = transform.position;
-				}
-				break;
+					{
+						_positionAtRelease = transform.position;
+					}
+					break;
 				default:
 					break;
 			}
@@ -130,25 +130,25 @@ namespace GSGD2.Gameplay
 			switch (newState)
 			{
 				case State.Idle:
-				{
-					if (previousState == State.Held)
 					{
-						if (TryRepositionToGround() == false)
+						if (previousState == State.Held)
 						{
-							transform.position = NullifyX(transform.position);
-							_isFalling = true;
-							_momentumTimer.Start();
+							if (TryRepositionToGround() == false)
+							{
+								transform.position = NullifyX(transform.position);
+								_isFalling = true;
+								_momentumTimer.Start();
+							}
 						}
 					}
-				}
-				break;
+					break;
 				case State.Highlighted:
 					break;
 				case State.Held:
-				{
+					{
 
-				}
-				break;
+					}
+					break;
 				default:
 					break;
 			}
