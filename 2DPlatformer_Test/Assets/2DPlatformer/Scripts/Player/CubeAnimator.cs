@@ -9,7 +9,6 @@ namespace GSGD2.Player
 	/// Handle basic animation based on <see cref="CubeController"/> states and velocity. Disabling the component disable the Animator component as well.
 	/// </summary>
 	[RequireComponent(typeof(CubeController))]
-	[RequireComponent(typeof(Animator))]
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(DisplacementEstimationUpdater))]
 	public class CubeAnimator : MonoBehaviour

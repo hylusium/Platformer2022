@@ -21,7 +21,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_TV_70S_A
-    second: {fileID: 2100000, guid: 4e4f030e7bd40f94e8ec24e44a13f478, type: 2}
+    second: {fileID: 2100000, guid: 91efea4a14a4d294099890397707303f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
