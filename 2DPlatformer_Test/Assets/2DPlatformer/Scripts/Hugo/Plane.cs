@@ -22,7 +22,7 @@ public class Plane : MonoBehaviour
     {
         if (other.GetComponentInParent<CubeController>())
         {
-            _plane.SetActive(true);
+            _plane.SetActive(false);
         }
     }
 
@@ -30,7 +30,7 @@ public class Plane : MonoBehaviour
     {
         if (other.GetComponentInParent<CubeController>())
         {
-            _plane.SetActive(false);
+            _plane.SetActive(true);
         }
     }
 
