@@ -36,13 +36,15 @@ public class VideoLoot : MonoBehaviour
 {
     public VideoClip _videoToPlay = null;
     [SerializeField] private videoplayerLootManager _playerVideoManager = null;
+    public int Index = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<CubeController>())
         {
-            _playerVideoManager._videoClipPlaying = _videoToPlay;
-            
+            _playerVideoManager._isHidden = false;
+            _playerVideoManager.Index = Index;
+
             Destroy(this.gameObject);
 
         }

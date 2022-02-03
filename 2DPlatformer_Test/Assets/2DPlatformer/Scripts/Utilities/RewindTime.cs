@@ -11,8 +11,6 @@ namespace GSGD2.Utilities
         #region variables
 
 
-        [SerializeField] private float _refreshVectorDuration = 0;
-        [SerializeField] private float _rewindCooldown = 0;
         [SerializeField] private Vector3 Vector3Debug;
         [SerializeField] private GameObject RewindPreview = null;
         [SerializeField] private float _distanceTreshold = 0;
