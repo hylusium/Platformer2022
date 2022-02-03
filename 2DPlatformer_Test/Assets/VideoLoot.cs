@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.Video;
 using GSGD2.Player;
 
-//            __,__
+//             __,__
 //   .--.  .- "     " -. .--.
 //  / .. \/  .-. .-.  \/ ..  \
 // | |  '|  /   Y   \  |'  | |
 // | \   \  \ 0 | 0 /  /   / |
 //  \ '- ,\.-"`` ``"-./, -' /
-//   `'-' / _ ^ ^_\    '-'`
-//       |  \._ _./    |
+//   `'-' / /_ ^ ^_ \  \ '-'`
+//       |  \._  _. /  |
 //       \   \ `~` /   /
 //        '._ '-=-' _.'
 //           '~---~'
@@ -34,7 +34,6 @@ using GSGD2.Player;
 
 public class VideoLoot : MonoBehaviour
 {
-    public VideoClip _videoToPlay = null;
     [SerializeField] private videoplayerLootManager _playerVideoManager = null;
     public int Index = 0;
 
