@@ -66,7 +66,7 @@ namespace GSGD2.Gameplay
 			levelReference.PlayerReferences.TryGetCameraAimController(out _playerCameraAimController);
 
 			_mouseToWorld = levelReference.MouseToWorld2D;
-			_layoutReminder = levelReference.UIManager.PlayerHUD.LayoutReminder;
+			//_layoutReminder = levelReference.UIManager.PlayerHUD.LayoutReminder;
 
 			//if (_cameraAimController != null)
 			//{

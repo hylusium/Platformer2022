@@ -9,13 +9,13 @@ namespace GSGD2.UI
 	/// </summary>
 	public class PlayerHUDMenu : AMenu
 	{
-		[SerializeField]
-		private LayoutReminderMenu _layoutReminder = null;
+		//[SerializeField]
+		//private LayoutReminderMenu _layoutReminder = null;
 
 		[SerializeField]
 		private HealthBarHUDMenu _healthBarHUDMenu = null;
 
-		public LayoutReminderMenu LayoutReminder => _layoutReminder;
+		//public LayoutReminderMenu LayoutReminder => _layoutReminder;
 		public HealthBarHUDMenu HealthBarHUDMenu => _healthBarHUDMenu;
 	}
 }
