@@ -507,9 +507,9 @@ MonoBehaviour:
   _playerReferences: {fileID: 658029998098805078}
   _collider: {fileID: 1241346952}
   _maxVelocity: 50
-  _groundMoveSpeed: 9
+  _groundMoveSpeed: 7
   _groundFriction: 10
-  _airMoveSpeed: 11
+  _airMoveSpeed: 6.9
   _ascendingGravityScale: 9
   _descendingGravityScale: 5
   _jump:
@@ -518,18 +518,18 @@ MonoBehaviour:
     cubeController: {fileID: 0}
     displacementEstimationUpdater: {fileID: 0}
     _gravityScale: 9
-    _jumpHeight: 3
+    _jumpHeight: 2.5
     _jumpHeightBonusWhenFalling: 1
     _jumpHeightBonusSpeedThreshold: 10
-  _changeToFallingStateWhenReleasingJump: 1
+  _changeToFallingStateWhenReleasingJump: 0
   _canJumpDuringDash: 1
-  _durationToDisableGroundRaycastWhenJumping: 0.5
+  _durationToDisableGroundRaycastWhenJumping: 0
   _resetJumpCountWhenFalling: 1
-  _allowedJumpCountWhenFalling: 1
+  _allowedJumpCountWhenFalling: 0
   _resetJumpCountWhenWallJumping: 1
-  _allowedJumpCountWhenWallJumping: 1
+  _allowedJumpCountWhenWallJumping: 0
   _resetJumpCountWhenBumping: 1
-  _allowedJumpCountWhenBumping: 1
+  _allowedJumpCountWhenBumping: 0
   _dash:
     enabled: 1
     _maximumAllowedForces: 1
@@ -542,14 +542,14 @@ MonoBehaviour:
     _debugMode: 0
   _durationToDisableGroundRaycastWhenDashing: 0.5
   _allowedDashCountWhenFalling: 1
-  _wallRaycastDistanceWhenDashing: 3
+  _wallRaycastDistanceWhenDashing: 2.6
   _resetDashCountWhenWallJumping: 1
   _allowedDashCountWhenWallJumping: 1
   _resetDashJumpCountWhenBumping: 1
   _allowedDashCountWhenBumping: 1
   _enableWallGrab: 1
-  _wallJumpHeight: 3.5
-  _wallJumpWallNormalForce: 8
+  _wallJumpHeight: 3
+  _wallJumpWallNormalForce: 5
   _wallGrabDisableDuration: 0.25
   _resetWallGrabDisableDurationWhenDashing: 1
   _durationToDisableControlDuringBump: 0.4

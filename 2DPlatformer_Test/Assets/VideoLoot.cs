@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.Video;
 using GSGD2.Player;
 
-//            __,__
+//             __,__
 //   .--.  .- "     " -. .--.
 //  / .. \/  .-. .-.  \/ ..  \
 // | |  '|  /   Y   \  |'  | |
 // | \   \  \ 0 | 0 /  /   / |
 //  \ '- ,\.-"`` ``"-./, -' /
-//   `'-' / _ ^ ^_\    '-'`
-//       |  \._ _./    |
+//   `'-' / /_ ^ ^_ \  \ '-'`
+//       |  \._  _. /  |
 //       \   \ `~` /   /
 //        '._ '-=-' _.'
 //           '~---~'
@@ -34,15 +34,16 @@ using GSGD2.Player;
 
 public class VideoLoot : MonoBehaviour
 {
-    public VideoClip _videoToPlay = null;
     [SerializeField] private videoplayerLootManager _playerVideoManager = null;
+    public int Index = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInParent<CubeController>())
         {
-            _playerVideoManager._videoClipPlaying = _videoToPlay;
-            
+            _playerVideoManager._isHidden = false;
+            _playerVideoManager.Index = Index;
+
             Destroy(this.gameObject);
 
         }

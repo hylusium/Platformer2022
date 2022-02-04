@@ -23,7 +23,11 @@ namespace GSGD2.Gameplay
             for (int i = 0; i < _firstElem.Length; i++)
             {
                 _firstElem[i].SetActive(true);
-                _secondElem[i].SetActive(false);
+                
+            }
+            for (int a = 0; a < _secondElem.Length; a++)
+            {
+                _secondElem[a].SetActive(false);
             }
         }
 
@@ -49,7 +53,11 @@ namespace GSGD2.Gameplay
             for (int i = 0; i < _firstElem.Length; i++)
             {
                 _firstElem[i].SetActive(true);
-                _secondElem[i].SetActive(false);
+                
+            }
+            for (int a = 0; a < _secondElem.Length; a++)
+            {
+                _secondElem[a].SetActive(false);
             }
         }
 
@@ -59,7 +67,11 @@ namespace GSGD2.Gameplay
             for (int i = 0; i < _firstElem.Length; i++)
             {
                 _firstElem[i].SetActive(false);
-                _secondElem[i].SetActive(true);
+                
+            }
+            for (int a = 0; a < _secondElem.Length; a++)
+            {
+                _secondElem[a].SetActive(true);
             }
         }
     }

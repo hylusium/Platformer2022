@@ -6,7 +6,6 @@ using GSGD2.Player;
 public class Plane : MonoBehaviour
 {
     [SerializeField] private GameObject _plane = null;
-    [SerializeField] private CubeController _playerRef = null;
     [SerializeField] private bool _isItFirst = false;
 
     private void Awake()

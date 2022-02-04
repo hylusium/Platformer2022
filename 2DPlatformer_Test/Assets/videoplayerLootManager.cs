@@ -2,46 +2,66 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using GSGD2.Player;
 
 public class videoplayerLootManager : MonoBehaviour
 {
+    [SerializeField] private PlayerController _playerController = null;
     [SerializeField] private GameObject _self = null;
-    [SerializeField] private Camera _cameraMain = null;
     [SerializeField] private VideoPlayer _selfVP = null;
-    public VideoClip _videoClipPlaying = null;
+    
+    public VideoClip[] _videoClipPlaying;
+   
     [System.NonSerialized] public bool _isHidden = true;
-
-
+    [System.NonSerialized] public int Index = 0;
+    
+    private MeshRenderer _meshRenderer = null;
 
     private void Awake()
     {
-        _self.SetActive(false);
+        _meshRenderer = _self.GetComponent<MeshRenderer>();
+        _meshRenderer.enabled = false;
+        _selfVP.loopPointReached -= _selfVP_loopPointReached;
+        _selfVP.loopPointReached += _selfVP_loopPointReached;
     }
 
+    private void _selfVP_loopPointReached(VideoPlayer source)
+    {
+        StopVideoPlayer();
+    }
 
     private void Update()
     {
-        if (_isHidden == true)
+        if (_selfVP.isPlaying == false && _isHidden == false)
         {
-            _self.SetActive(false);
+            _meshRenderer.enabled = true;
+            PlayVideo();
         }
-        else
-        {
-            _self.SetActive(true);
-        }
-        StopVideoPlayer();
     }
 
     private void StopVideoPlayer()
     {
+        _selfVP.Stop();
+        _meshRenderer.enabled = false;
+        _selfVP.clip = null;
+        _isHidden = true;
+        _playerController.enabled = true;
+    }
 
-        if (_selfVP.clip.frameCount >= _videoClipPlaying.frameCount)
+    private void PlayVideo()
+    {
+        _selfVP.clip = _videoClipPlaying[Index];
+
+        if (_selfVP.waitForFirstFrame)
         {
-            _selfVP.Stop();
-            _videoClipPlaying = null;
-            _isHidden = true;
+            _selfVP.Play();
+            _playerController.enabled = false;
         }
+    }
 
-
+    private void OnDestroy()
+    {
+        _selfVP.loopPointReached -= _selfVP_loopPointReached;
     }
 }
+
