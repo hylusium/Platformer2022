@@ -16,6 +16,8 @@ namespace GSGD2.Utilities
         [SerializeField] private PlayerReferences _playerReference = null;
         [SerializeField] private Timer _timer = null;
         [SerializeField] private GameObject[] _rewindPlane = null;
+        [SerializeField] private Timer _planeTimer = null;
+        [SerializeField] private PlayerController _playerController = null;
 
         private int _listLength = 50;
         private CharacterCollision _characterCollision = null;
@@ -41,6 +43,14 @@ namespace GSGD2.Utilities
         private void Update()
         {
             AddTransformToList();
+            if (_planeTimer.Update() == true)
+            {
+                for (int i = 0; i < _rewindPlane.Length; i++)
+                {
+                    _rewindPlane[i].SetActive(false);
+                }
+                _playerController.enabled = true;
+            }
         }
 
         private void AddTransformToList()
@@ -77,11 +87,11 @@ namespace GSGD2.Utilities
                     break;
                 }
             }
-            
-            
-                
 
-            
+
+
+
+
 
         }
 
@@ -105,6 +115,9 @@ namespace GSGD2.Utilities
                 _rewindPlane[i].SetActive(true);
             }
             RewindAction();
+            _playerController.enabled = false;
+
+            _planeTimer.Start();
 
 
         }
