@@ -4,16 +4,13 @@ ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -203655887218126122
-    second: mixamo.com
-  - first:
       74: 1827226128182048838
     second: Take 001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Bugzy
+      name: M_Bugzy18
     second: {fileID: 2100000, guid: fb842e56dfb5eeb40866d3ddf5718132, type: 2}
   - first:
       type: UnityEngine:Material
@@ -23,18 +20,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: M_Eye
+      name: M_Eye17
     second: {fileID: 2100000, guid: 0dc6350e87a0d294f8cd5bc543409b7b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Eye4
     second: {fileID: 2100000, guid: 0dc6350e87a0d294f8cd5bc543409b7b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: af390d761e44428498783db44fce4171, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
