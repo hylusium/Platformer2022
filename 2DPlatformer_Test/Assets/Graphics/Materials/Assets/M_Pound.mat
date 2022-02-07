@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Poster_01
-  m_Shader: {fileID: 4800000, guid: d7ff54d5dd847ff4386d81246009f203, type: 3}
+  m_Name: M_Pound
+  m_Shader: {fileID: 4800000, guid: 8a44aa73cd07d5a4997c0c4c63cca1c9, type: 3}
   m_ShaderKeywords: _USEALBEDOTEXTURE_ON _USEGLOSSTEXTURE_ON _USEMETALLICTEXTURE_ON
     _USENORMALTEXTURE_ON
   m_LightmapFlags: 0
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoTexture:
-        m_Texture: {fileID: 2800000, guid: e52e612763903bf4a8d196c0aa1a4dc8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0e9e358597e76f748a5c5eda4348e256, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -49,7 +49,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossTexture:
-        m_Texture: {fileID: 2800000, guid: 9cb4a8dec23ff964eab91c92675c9c4f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26800c37f204a0a41a230df05e42319d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -61,11 +61,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTexture:
-        m_Texture: {fileID: 2800000, guid: e96bf5e78b8a2194db3fa241852f5445, type: 3}
+        m_Texture: {fileID: 2800000, guid: c7fdd694a46bd6b4b93eca79893854cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTexture:
-        m_Texture: {fileID: 2800000, guid: f1e716a6e37db6d4fb6b937678c4c082, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0754d11b8eb25f04e9964b57dd4b34ed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,10 +73,6 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Opacity:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _OpacityTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -102,23 +98,15 @@ Material:
     - _MetallicValue: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Opacityvalue: 0
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TransAmbient: 0.2
-    - _TransDirect: 1
-    - _TransNormalDistortion: 0.1
-    - _TransScattering: 2
-    - _TransShadow: 0.9
-    - _Translucency: 1
     - _UVSec: 0
     - _UseAlbedoTexture: 1
     - _UseGlossTexture: 1
     - _UseMetallicTexture: 1
     - _UseNormalTexture: 1
-    - _UseOpacityTexture: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:

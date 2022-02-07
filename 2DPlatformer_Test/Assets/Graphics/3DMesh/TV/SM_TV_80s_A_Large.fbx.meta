@@ -7,7 +7,17 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_TVBackground
+    second: {fileID: 2100000, guid: ad1bac8617f9d804f8d858557f762170, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_TVScreen
+    second: {fileID: 2100000, guid: ce5b4df64eaf82f47a0be27647058bf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TVScreen1
     second: {fileID: 2100000, guid: ce5b4df64eaf82f47a0be27647058bf4, type: 2}
   - first:
       type: UnityEngine:Material
@@ -23,11 +33,16 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_TV_80s_A2
-    second: {fileID: 2100000, guid: 55e80e0efe5691e4492332e39951beca, type: 2}
+    second: {fileID: 2100000, guid: 31b3c36386b2beb468f0907f96d1c117, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_VHSOverlay
+    second: {fileID: 2100000, guid: 96e3acd260b3bf04eabe53b5f5db7091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_VHSOverlay1
     second: {fileID: 2100000, guid: 96e3acd260b3bf04eabe53b5f5db7091, type: 2}
   materials:
     materialImportMode: 2
@@ -110,7 +125,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
