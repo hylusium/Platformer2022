@@ -13,8 +13,8 @@
 		[SerializeField]
 		private float _gravityScale = 5f;
 
-		[SerializeField]
-		private float _jumpHeight = 3f;
+		
+		public float _jumpHeight = 3f;
 
 		[SerializeField]
 		private float _jumpHeightBonusWhenFalling = 1f;
