@@ -839,8 +839,7 @@ MonoBehaviour:
   _playerReference: {fileID: 658029998098805078}
   _timer:
     _duration: 2
-  _rewindPlane:
-  - {fileID: 0}
+  _rewindPlane: []
   _planeTimer:
     _duration: 2
   _playerController: {fileID: 4954958364502005736}
@@ -857,10 +856,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32be4d03b1d8f74448497ee1f6baa0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _firstElem:
-  - {fileID: 0}
-  _secondElem:
-  - {fileID: 0}
+  _firstElem: []
+  _secondElem: []
+  _normalMat: {fileID: 2100000, guid: 20027398eedff1f4c9140274069da78f, type: 2}
+  _glitchMaterial: {fileID: 2100000, guid: d47c3fc48c400fd45a173040af3bbcca, type: 2}
 --- !u!114 &908468611
 MonoBehaviour:
   m_ObjectHideFlags: 0
