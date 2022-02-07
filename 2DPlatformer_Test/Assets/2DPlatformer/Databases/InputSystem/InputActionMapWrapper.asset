@@ -129,6 +129,14 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
+    - m_Name: PauseMenu
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: 9fd3e5fa-998b-48ed-ab2a-09deac2b3223
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
     m_Bindings:
     - m_Name: 
       m_Id: b82491d4-813d-4be0-bea8-2217def02fb7
@@ -401,4 +409,20 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: LeftMap
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9a6e638c-f31c-4ea3-9441-d18148838fec
+      m_Path: <Gamepad>/start
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: PauseMenu
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 8b83f4dc-c8f1-4fd9-ae84-3e10ca53bfcd
+      m_Path: <Keyboard>/escape
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: PauseMenu
       m_Flags: 0

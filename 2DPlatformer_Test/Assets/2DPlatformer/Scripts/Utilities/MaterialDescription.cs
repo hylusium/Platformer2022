@@ -76,7 +76,7 @@ namespace GSGD2.Utilities
 			}
 			if (_cachedOriginalMaterial == null || meshRenderers.Length != _cachedOriginalMaterial.Count)
 			{
-				Debug.LogError("Can't ChangeMaterial(), you must call SetCachedOriginalMaterial before");
+				//Debug.LogError("Can't ChangeMaterial(), you must call SetCachedOriginalMaterial before");
 				return false;
 			}
 			return true;
