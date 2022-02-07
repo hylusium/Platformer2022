@@ -24,6 +24,7 @@ namespace GSGD2.Player
         private const string REWIND_ACTION_NAME = "Rewind";
         private const string RIGHT_MAP = "RightMap";
         private const string LEFT_MAP = "LeftMap";
+        private const string PAUSE_MENU = "PauseMenu";
 
         [SerializeField]
         private InputActionMapWrapper _inputActionMapWrapper;
@@ -45,6 +46,7 @@ namespace GSGD2.Player
         private InputAction _rewindInputAction = null;
         private InputAction _rightMapInputAction = null;
         private InputAction _leftMapInputAction = null;
+        private InputAction _pauseMenuInputAction = null;
 
         public bool UseMouseForLookDirection => _useMouseForLookDirection;
         public float HorizontalMove => _horizontalMoveInputAction.ReadValue<float>();
@@ -65,6 +67,7 @@ namespace GSGD2.Player
         public event InputEvent RewindPerformed = null;
         public event InputEvent RightMapPerformed = null;
         public event InputEvent LeftMapPerformed = null;
+        public event InputEvent PauseMenuPerformed = null;
 
         private void OnEnable()
         {
@@ -136,9 +139,15 @@ namespace GSGD2.Player
                 _leftMapInputAction.performed -= _leftMapInputAction_performed;
                 _leftMapInputAction.performed += _leftMapInputAction_performed;
             }
+            if (_inputActionMapWrapper.TryFindAction(PAUSE_MENU, out _pauseMenuInputAction, true) == true)
+            {
+                _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
+                _pauseMenuInputAction.performed += _pauseMenuInputAction_performed;
+            }
         }
 
-       
+        
+
         private void OnDisable()
         {
             _horizontalMoveInputAction.Disable();
@@ -156,6 +165,7 @@ namespace GSGD2.Player
             _rewindInputAction.Disable();
             _rightMapInputAction.Disable();
             _leftMapInputAction.Disable();
+            _pauseMenuInputAction.Disable();
 
 
             _jumpInputAction.performed -= JumpInputAction_performed;
@@ -169,6 +179,7 @@ namespace GSGD2.Player
             _rewindInputAction.performed -= _rewindInputAction_performed;
             _rightMapInputAction.performed -= _rightMapInputAction_performed;
             _leftMapInputAction.performed -= _leftMapInputAction_performed;
+            _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
         }
 
         private void JumpInputAction_performed(InputAction.CallbackContext obj)
@@ -221,6 +232,9 @@ namespace GSGD2.Player
         {
             LeftMapPerformed?.Invoke(this, obj);
         }
-
+        private void _pauseMenuInputAction_performed(InputAction.CallbackContext obj)
+        {
+            PauseMenuPerformed?.Invoke(this, obj);
+        }
     }
 }

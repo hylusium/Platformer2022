@@ -10,38 +10,65 @@ namespace GSGD2.Gameplay
     {
         [SerializeField]
         private InputActionMapWrapper _inputActionMap = null;
-        private InputAction _abilityImproverInteractionInputAction = null;
+        private InputAction _pauseMenuInputAction = null;
+
+
+        [SerializeField] private GameObject _pauseMenu = null;
+        private PlayerController _pcRef = null;
+        private bool _isFirstTime = true;
+
+        private void Awake()
+        {
+            LevelReferences.Instance.PlayerReferences.TryGetPlayerController(out _pcRef);
+            _pauseMenu.SetActive(false);
+        }
 
         private void OnEnable()
         {
-            if (_inputActionMap.TryFindAction("AbilityUpgrade", out InputAction _abilityImproverInteractionInputAction) == true)
+
+            if (_inputActionMap.TryFindAction("PauseMenu", out InputAction _pauseMenuInputAction) == true)
             {
+                _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
+                _pauseMenuInputAction.performed += _pauseMenuInputAction_performed;
 
-                _abilityImproverInteractionInputAction.performed -= _abilityImproverInteractionInputAction_performed;
-                _abilityImproverInteractionInputAction.performed += _abilityImproverInteractionInputAction_performed;
-
-                _abilityImproverInteractionInputAction.Enable();
             }
 
         }
 
+        private void _pauseMenuInputAction_performed(InputAction.CallbackContext obj)
+        {
+            Pause();
+        }
 
         private void OnDisable()
         {
-            _abilityImproverInteractionInputAction.performed -= _abilityImproverInteractionInputAction_performed;
+            _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
 
-            _abilityImproverInteractionInputAction.Disable();
+            _pauseMenuInputAction.Disable();
 
         }
 
 
-
-
-
-        private void _abilityImproverInteractionInputAction_performed(InputAction.CallbackContext obj)
+        private void Pause()
         {
-            
+            if (_isFirstTime == true)
+            {
+                _pauseMenu.SetActive(true);
+                _isFirstTime = false;
+                _pcRef.enabled = false;
+            }
+            else
+            {
+                _pauseMenu.SetActive(false);
+                _isFirstTime = true;
+                _pcRef.enabled = true;
+            }
+
+
         }
+
+
+
 
     }
 }

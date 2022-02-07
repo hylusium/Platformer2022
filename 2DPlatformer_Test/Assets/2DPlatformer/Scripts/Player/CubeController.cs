@@ -53,8 +53,8 @@ namespace GSGD2.Player
 		/// <summary>
 		/// Speed applied to character velocity in the direction of <see cref="InputMovement"/> while in <see cref="State.Grounded"/>
 		/// </summary>
-		[SerializeField]
-		private float _groundMoveSpeed = 1f;
+		
+		public float _groundMoveSpeed = 1f;
 
 		/// <summary>
 		/// Modifier applied when releasing <see cref="InputMovement"/> while on the ground.
@@ -81,8 +81,7 @@ namespace GSGD2.Player
 		private float _descendingGravityScale = 5f;
 
 		[Header("Jump")]
-		[SerializeField]
-		private Jump _jump = null;
+		public Jump _jump = null;
 
 		[SerializeField]
 		private bool _changeToFallingStateWhenReleasingJump = false;
@@ -112,8 +111,7 @@ namespace GSGD2.Player
 		private int _allowedJumpCountWhenBumping = 1;
 
 		[Header("Dash")]
-		[SerializeField]
-		private Dash _dash = null;
+		public Dash _dash = null;
 
 		[SerializeField]
 		private float _durationToDisableGroundRaycastWhenDashing = 0.5f;
