@@ -9,6 +9,9 @@ namespace GSGD2.Gameplay
     {
         [SerializeField] private GameObject[] _firstElem = null;
         [SerializeField] private GameObject[] _secondElem = null;
+        [SerializeField] private Material _normalMat = null;
+        [SerializeField] private Material _glitchMaterial = null;
+        private bool _isFirstRoom = true;
 
         private PlayerController _pcRef = null;
 
@@ -22,12 +25,14 @@ namespace GSGD2.Gameplay
         {
             for (int i = 0; i < _firstElem.Length; i++)
             {
-                _firstElem[i].SetActive(true);
-                
+                _firstElem[i].GetComponentInChildren<Renderer>().material = _normalMat;
+                _firstElem[i].GetComponentInChildren<Collider>().enabled = true;
+
             }
             for (int a = 0; a < _secondElem.Length; a++)
             {
-                _secondElem[a].SetActive(false);
+                _secondElem[a].GetComponentInChildren<Renderer>().material = _glitchMaterial;
+                _secondElem[a].GetComponentInChildren<Collider>().enabled = false;
             }
         }
 
@@ -36,8 +41,7 @@ namespace GSGD2.Gameplay
         {
             _pcRef.RightMapPerformed -= _pcRef_RightMapPerformed;
             _pcRef.RightMapPerformed += _pcRef_RightMapPerformed;
-            _pcRef.LeftMapPerformed -= _pcRef_LeftMapPerformed;
-            _pcRef.LeftMapPerformed += _pcRef_LeftMapPerformed;
+            
         }
 
        
@@ -45,35 +49,46 @@ namespace GSGD2.Gameplay
         private void OnDisable()
         {
             _pcRef.RightMapPerformed -= _pcRef_RightMapPerformed;
-            _pcRef.LeftMapPerformed -= _pcRef_LeftMapPerformed;
         }
 
         private void _pcRef_RightMapPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            for (int i = 0; i < _firstElem.Length; i++)
+            if (_isFirstRoom == true)
             {
-                _firstElem[i].SetActive(true);
-                
+                for (int i = 0; i < _firstElem.Length; i++)
+                {
+                    _firstElem[i].GetComponentInChildren<Renderer>().material = _glitchMaterial;
+                    _firstElem[i].GetComponentInChildren<Collider>().enabled = false;
+                    
+
+                }
+                for (int a = 0; a < _secondElem.Length; a++)
+                {
+                    _secondElem[a].GetComponentInChildren<Renderer>().material = _normalMat;
+                    _secondElem[a].GetComponentInChildren<Collider>().enabled = true;
+                }
+                _isFirstRoom = false;
             }
-            for (int a = 0; a < _secondElem.Length; a++)
+            else
             {
-                _secondElem[a].SetActive(false);
+                for (int i = 0; i < _firstElem.Length; i++)
+                {
+                    _firstElem[i].GetComponentInChildren<Renderer>().material = _normalMat;
+                    _firstElem[i].GetComponentInChildren<Collider>().enabled = true;
+
+                }
+                for (int a = 0; a < _secondElem.Length; a++)
+                {
+                    _secondElem[a].GetComponentInChildren<Renderer>().material = _glitchMaterial;
+                    _secondElem[a].GetComponentInChildren<Collider>().enabled = false;
+                }
+                _isFirstRoom = true;
             }
+           
         }
 
 
-        private void _pcRef_LeftMapPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
-        {
-            for (int i = 0; i < _firstElem.Length; i++)
-            {
-                _firstElem[i].SetActive(false);
-                
-            }
-            for (int a = 0; a < _secondElem.Length; a++)
-            {
-                _secondElem[a].SetActive(true);
-            }
-        }
+       
     }
 
 }
