@@ -861,6 +861,8 @@ MonoBehaviour:
   - {fileID: 0}
   _secondElem:
   - {fileID: 0}
+  _normalMat: {fileID: 2100000, guid: 20027398eedff1f4c9140274069da78f, type: 2}
+  _glitchMaterial: {fileID: 2100000, guid: d47c3fc48c400fd45a173040af3bbcca, type: 2}
 --- !u!114 &908468611
 MonoBehaviour:
   m_ObjectHideFlags: 0
