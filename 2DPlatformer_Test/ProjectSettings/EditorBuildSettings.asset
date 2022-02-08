@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/2DPlatformer/Scenes/MainMenu.unity
     guid: 357a21f5e581f2b4cb5caaeb254a94b2
   - enabled: 1
-    path: Assets/2DPlatformer/Scenes/GameplayZoo.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/2DPlatformer/Scenes/Gameplay_Test01.unity
-    guid: bda984a3cb8cc64479c85adaa04c4d48
-  - enabled: 1
-    path: Assets/2DPlatformer/Scenes/Gameplay_Test02.unity
-    guid: 9a8af0f72fe37aa42a0388b498b89502
+    path: Assets/2DPlatformer/Scenes/LevelArtScene.unity
+    guid: c24954fa2c843b3438e09e8736f6d204
   m_configObjects: {}
