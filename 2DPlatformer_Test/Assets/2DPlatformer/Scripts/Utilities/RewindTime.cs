@@ -10,7 +10,6 @@ namespace GSGD2.Utilities
 
         #region variables
 
-
         [SerializeField] private GameObject RewindPreview = null;
         [SerializeField] private float _distanceTreshold = 0;
         [SerializeField] private PlayerReferences _playerReference = null;
@@ -79,7 +78,6 @@ namespace GSGD2.Utilities
                 _tempDistance = Vector3.Distance(transform.position, _rewindPos[i]);
                 if (_tempDistance > _distanceTreshold)
                 {
-                    Debug.Log("rewind");
                     transform.position = _rewindPos[i];
                     _rewindPos.Clear();
 
@@ -87,12 +85,6 @@ namespace GSGD2.Utilities
                     break;
                 }
             }
-
-
-
-
-
-
         }
 
         private void OnEnable()

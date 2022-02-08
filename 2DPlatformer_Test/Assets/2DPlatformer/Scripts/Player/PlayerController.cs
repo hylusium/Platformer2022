@@ -64,7 +64,6 @@ namespace GSGD2.Player
         public event InputEvent GroundSmashPerformed = null;
         public event InputEvent RewindPerformed = null;
         public event InputEvent RightMapPerformed = null;
-        public event InputEvent LeftMapPerformed = null;
         public event InputEvent PauseMenuPerformed = null;
 
         private void OnEnable()

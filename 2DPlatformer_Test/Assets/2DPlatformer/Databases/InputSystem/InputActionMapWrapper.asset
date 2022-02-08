@@ -220,7 +220,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: d69efeda-325b-40fb-8c58-cd44f8d24019
-      m_Path: <Gamepad>/rightTrigger
+      m_Path: <Gamepad>/leftTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -364,7 +364,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: e7fd6c86-7883-4892-b9c4-d26936eb8ba5
-      m_Path: <Gamepad>/rightShoulder
+      m_Path: <Gamepad>/rightTrigger
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -380,7 +380,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 914c9355-95df-448c-a1fc-6ff6f9f89dc0
-      m_Path: <Gamepad>/dpad/right
+      m_Path: <Gamepad>/rightShoulder
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -396,7 +396,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: d84d97ab-a3b1-49ec-8a96-54be63326a67
-      m_Path: <Gamepad>/dpad/left
+      m_Path: <Gamepad>/leftShoulder
       m_Interactions: 
       m_Processors: 
       m_Groups: 
