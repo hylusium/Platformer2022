@@ -23,7 +23,6 @@ namespace GSGD2.Player
         private const string GROUND_SMASH_ACTION_NAME = "GroundSmash";
         private const string REWIND_ACTION_NAME = "Rewind";
         private const string RIGHT_MAP = "RightMap";
-        private const string LEFT_MAP = "LeftMap";
         private const string PAUSE_MENU = "PauseMenu";
 
         [SerializeField]
@@ -45,7 +44,6 @@ namespace GSGD2.Player
         private InputAction _groundSmashInputAction = null;
         private InputAction _rewindInputAction = null;
         private InputAction _rightMapInputAction = null;
-        private InputAction _leftMapInputAction = null;
         private InputAction _pauseMenuInputAction = null;
 
         public bool UseMouseForLookDirection => _useMouseForLookDirection;
@@ -66,7 +64,6 @@ namespace GSGD2.Player
         public event InputEvent GroundSmashPerformed = null;
         public event InputEvent RewindPerformed = null;
         public event InputEvent RightMapPerformed = null;
-        public event InputEvent LeftMapPerformed = null;
         public event InputEvent PauseMenuPerformed = null;
 
         private void OnEnable()
@@ -134,11 +131,7 @@ namespace GSGD2.Player
                 _rightMapInputAction.performed -= _rightMapInputAction_performed;
                 _rightMapInputAction.performed += _rightMapInputAction_performed;
             }
-            if (_inputActionMapWrapper.TryFindAction(LEFT_MAP, out _leftMapInputAction, true) == true)
-            {
-                _leftMapInputAction.performed -= _leftMapInputAction_performed;
-                _leftMapInputAction.performed += _leftMapInputAction_performed;
-            }
+           
             if (_inputActionMapWrapper.TryFindAction(PAUSE_MENU, out _pauseMenuInputAction, true) == true)
             {
                 _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
@@ -164,7 +157,6 @@ namespace GSGD2.Player
             _groundSmashInputAction.Disable();
             _rewindInputAction.Disable();
             _rightMapInputAction.Disable();
-            _leftMapInputAction.Disable();
             _pauseMenuInputAction.Disable();
 
 
@@ -178,7 +170,6 @@ namespace GSGD2.Player
             _groundSmashInputAction.performed -= GroundSmashInputAction_performed;
             _rewindInputAction.performed -= _rewindInputAction_performed;
             _rightMapInputAction.performed -= _rightMapInputAction_performed;
-            _leftMapInputAction.performed -= _leftMapInputAction_performed;
             _pauseMenuInputAction.performed -= _pauseMenuInputAction_performed;
         }
 
@@ -228,10 +219,7 @@ namespace GSGD2.Player
         {
             RightMapPerformed?.Invoke(this, obj);
         }
-        private void _leftMapInputAction_performed(InputAction.CallbackContext obj)
-        {
-            LeftMapPerformed?.Invoke(this, obj);
-        }
+       
         private void _pauseMenuInputAction_performed(InputAction.CallbackContext obj)
         {
             PauseMenuPerformed?.Invoke(this, obj);

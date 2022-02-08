@@ -138,8 +138,7 @@ namespace GSGD2.Player
 		private int _allowedDashCountWhenBumping = 1;
 
 		[Header("Wall Grab / Jump")]
-		[SerializeField]
-		private bool _enableWallGrab = true;
+		public bool _enableWallGrab = true;
 
 		/// <summary>
 		/// Height applied to the jump force when releasing the wall jump button
