@@ -3,7 +3,27 @@ guid: 389fcaba020073e4ea467865d81fa54d
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Clavier1
+    second: {fileID: 2100000, guid: 49bb689a2997cfe45a1711215aadc7ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_HUBBackground1
+    second: {fileID: 2100000, guid: b77b756311bd9db468e4adfd33652476, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_VHSOverlay2
+    second: {fileID: 2100000, guid: ce5b4df64eaf82f47a0be27647058bf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_HUB_Computer2
+    second: {fileID: 2100000, guid: 7cde3d6f98515934f98438fe320a3489, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

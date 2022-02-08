@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Poster_03
-  m_Shader: {fileID: 4800000, guid: bbb29bc6f1f0b704d989cac34a3a1b7e, type: 3}
+  m_Shader: {fileID: 4800000, guid: d7ff54d5dd847ff4386d81246009f203, type: 3}
   m_ShaderKeywords: _BLENDMAINNORMAL_ON _SOURCE_SPECULARALPHA _USEALBEDOTEXTURE_ON
     _USEGLOSSTEXTURE_ON _USEMETALLICTEXTURE_ON _USENORMALTEXTURE_ON
   m_LightmapFlags: 0
@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoTexture:
-        m_Texture: {fileID: 2800000, guid: cd8724a0d7753f245a61f23fa2e0d77a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e64c448069807954798f0998594999a9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BackAlbedo:
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _GlossTexture:
-        m_Texture: {fileID: 2800000, guid: 082bc5715c966cc41bfebb04254cf3bf, type: 3}
+        m_Texture: {fileID: 2800000, guid: 06238020f59994341aa004bde9d1b8e0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -81,11 +81,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicTexture:
-        m_Texture: {fileID: 2800000, guid: 3b2a652179568c242b8c299551793012, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a6445b697d3d0c4981dd172f80fae80, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTexture:
-        m_Texture: {fileID: 2800000, guid: 160b1f7957eb96d4a9812915c52eb8e2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4e3bc232df4e38e4ca768c575917dbb1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:

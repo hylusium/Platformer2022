@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: f46f70f38aae7424fbce4d9fdc193efe
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _windows95_wallpaper: {fileID: 2800000, guid: 5262f5be89659fa4a8f95158e0a407eb, type: 3}
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
