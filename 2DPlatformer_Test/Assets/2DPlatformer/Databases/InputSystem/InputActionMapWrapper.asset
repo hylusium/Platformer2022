@@ -396,7 +396,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 8b83f4dc-c8f1-4fd9-ae84-3e10ca53bfcd
-      m_Path: <Keyboard>/escape
+      m_Path: <Keyboard>/numpad8
       m_Interactions: 
       m_Processors: 
       m_Groups: 
