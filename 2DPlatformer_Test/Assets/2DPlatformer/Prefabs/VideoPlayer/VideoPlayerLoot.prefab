@@ -60,7 +60,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerVideoManager: {fileID: 0}
-  Index: 1
+  _pickUpCount: {fileID: 0}
+  Index: 0
 --- !u!114 &1227027074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,9 +77,9 @@ MonoBehaviour:
   _cubecontroller: {fileID: 0}
   _rewind: {fileID: 0}
   _changeroom: {fileID: 0}
-  _dash: 1
+  _dash: 0
   _wallGrab: 0
-  _rewindTime: 0
+  _rewindTime: 1
   _changeRoom: 0
 --- !u!1 &4909864438327611927
 GameObject:

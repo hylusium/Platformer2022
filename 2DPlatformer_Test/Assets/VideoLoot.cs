@@ -35,6 +35,8 @@ using GSGD2.Player;
 public class VideoLoot : MonoBehaviour
 {
     [SerializeField] private videoplayerLootManager _playerVideoManager = null;
+    [SerializeField] private CountPickup _pickUpCount = null;
+    
     public int Index = 0;
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +45,7 @@ public class VideoLoot : MonoBehaviour
         {
             _playerVideoManager._isHidden = false;
             _playerVideoManager.Index = Index;
+            _pickUpCount.AddValue(1);
 
             Destroy(this.gameObject);
 
