@@ -532,7 +532,7 @@ MonoBehaviour:
   _resetJumpCountWhenBumping: 1
   _allowedJumpCountWhenBumping: 0
   _dash:
-    enabled: 0
+    enabled: 1
     _maximumAllowedForces: 1
     cubeController: {fileID: 0}
     displacementEstimationUpdater: {fileID: 0}
@@ -548,7 +548,7 @@ MonoBehaviour:
   _allowedDashCountWhenWallJumping: 1
   _resetDashJumpCountWhenBumping: 1
   _allowedDashCountWhenBumping: 1
-  _enableWallGrab: 0
+  _enableWallGrab: 1
   _wallJumpHeight: 3.5
   _wallJumpWallNormalForce: 5
   _wallGrabDisableDuration: 0.25
