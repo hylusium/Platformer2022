@@ -121,14 +121,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    - m_Name: LeftMap
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 431c53ae-53f4-407d-85fd-4df543ad824e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
     - m_Name: PauseMenu
       m_Type: 1
       m_ExpectedControlType: Button
@@ -380,7 +372,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: 914c9355-95df-448c-a1fc-6ff6f9f89dc0
-      m_Path: <Gamepad>/rightShoulder
+      m_Path: <Gamepad>/buttonNorth
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -393,22 +385,6 @@ MonoBehaviour:
       m_Processors: 
       m_Groups: 
       m_Action: RightMap
-      m_Flags: 0
-    - m_Name: 
-      m_Id: d84d97ab-a3b1-49ec-8a96-54be63326a67
-      m_Path: <Gamepad>/leftShoulder
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: LeftMap
-      m_Flags: 0
-    - m_Name: 
-      m_Id: e1ef6542-cdc8-4c19-a65c-e63c56df68b6
-      m_Path: <Keyboard>/leftArrow
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: LeftMap
       m_Flags: 0
     - m_Name: 
       m_Id: 9a6e638c-f31c-4ea3-9441-d18148838fec

@@ -20,7 +20,7 @@ namespace GSGD2.Gameplay
         {
             LevelReferences.Instance.PlayerReferences.TryGetPlayerController(out _pcRef);
             _pauseMenu.SetActive(false);
-           _tempVelocity = _cubeController._groundMoveSpeed;
+            _tempVelocity = _cubeController._groundMoveSpeed;
             
         }
 
@@ -60,7 +60,6 @@ namespace GSGD2.Gameplay
 
 
         }
-
 
         private void _pcRef_PauseMenuPerformed(PlayerController sender, UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {

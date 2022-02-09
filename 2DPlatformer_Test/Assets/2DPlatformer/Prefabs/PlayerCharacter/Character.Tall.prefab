@@ -532,7 +532,7 @@ MonoBehaviour:
   _resetJumpCountWhenBumping: 1
   _allowedJumpCountWhenBumping: 0
   _dash:
-    enabled: 0
+    enabled: 1
     _maximumAllowedForces: 1
     cubeController: {fileID: 0}
     displacementEstimationUpdater: {fileID: 0}
@@ -548,7 +548,7 @@ MonoBehaviour:
   _allowedDashCountWhenWallJumping: 1
   _resetDashJumpCountWhenBumping: 1
   _allowedDashCountWhenBumping: 1
-  _enableWallGrab: 0
+  _enableWallGrab: 1
   _wallJumpHeight: 3.5
   _wallJumpWallNormalForce: 5
   _wallGrabDisableDuration: 0.25
@@ -829,7 +829,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45943501467049751}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 888501341884ac1409d4ad0fb92ca16c, type: 3}
   m_Name: 
@@ -839,7 +839,8 @@ MonoBehaviour:
   _playerReference: {fileID: 658029998098805078}
   _timer:
     _duration: 2
-  _rewindPlane: []
+  _rewindPlane:
+  - {fileID: 0}
   _planeTimer:
     _duration: 2
   _playerController: {fileID: 4954958364502005736}
@@ -2079,6 +2080,26 @@ PrefabInstance:
     - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
       propertyPath: m_CastShadows
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: 0.0026032925
+      objectReference: {fileID: 0}
+    - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: 0.7783642
+      objectReference: {fileID: 0}
+    - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.14077884
+      objectReference: {fileID: 0}
+    - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.52539253
+      objectReference: {fileID: 0}
+    - target: {fileID: -8664798618177227206, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.79420495
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d39772ad1e5a5a0428f60d50def62eda, type: 3}
       propertyPath: m_Name

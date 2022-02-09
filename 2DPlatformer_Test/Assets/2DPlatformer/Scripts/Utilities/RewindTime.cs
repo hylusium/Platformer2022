@@ -32,6 +32,7 @@ namespace GSGD2.Utilities
             {
                 _rewindPlane[i].SetActive(false);
             }
+            this.enabled = false;
         }
         private void Start()
         {
@@ -92,6 +93,7 @@ namespace GSGD2.Utilities
             _pcRef.RewindPerformed -= _pcRef_RewindPerformed;
             _pcRef.RewindPerformed += _pcRef_RewindPerformed;
             _playerReference.TryGetCharacterCollision(out _characterCollision);
+            _rewindPos.Add(transform.position);
             _timer.Start();
         }
         private void OnDisable()
