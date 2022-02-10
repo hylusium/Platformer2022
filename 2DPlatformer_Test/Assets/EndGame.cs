@@ -6,7 +6,8 @@ using UnityEditor.SceneManagement;
 public class EndGame : MonoBehaviour
 {
     [SerializeField] private bool _endGame = false;
-    [SerializeField] private string _finalScene = null;
+    [SerializeField] private string _finalScene = "";
+    [SerializeField] private CountPickup _count = null;
 
 
     private void Update()
@@ -21,7 +22,11 @@ public class EndGame : MonoBehaviour
 
     private void CheckEndgame()
     {
-        EditorSceneManager.OpenScene(_finalScene);
+        if (_count._count == 8)
+        {
+            EditorSceneManager.OpenScene(_finalScene);
+
+        }
 
 
     }
