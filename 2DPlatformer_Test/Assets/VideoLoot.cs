@@ -36,6 +36,7 @@ public class VideoLoot : MonoBehaviour
 {
     [SerializeField] private videoplayerLootManager _playerVideoManager = null;
     [SerializeField] private CountPickup _pickUpCount = null;
+    [SerializeField] private int _count = 0;
     
     public int Index = 0;
 
@@ -45,7 +46,7 @@ public class VideoLoot : MonoBehaviour
         {
             _playerVideoManager._isHidden = false;
             _playerVideoManager.Index = Index;
-            _pickUpCount.AddValue(1);
+            _pickUpCount.AddValue(_count);
 
             Destroy(this.gameObject);
 
