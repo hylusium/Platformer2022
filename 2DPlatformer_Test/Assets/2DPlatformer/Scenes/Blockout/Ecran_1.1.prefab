@@ -4719,11 +4719,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1489857417981103270, guid: 5ba5eeb006b736d4bafce5b7f48cee79, type: 3}
       propertyPath: _endPosition.z
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1489857417981103270, guid: 5ba5eeb006b736d4bafce5b7f48cee79, type: 3}
       propertyPath: _startPosition.z
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1489857418557743770, guid: 5ba5eeb006b736d4bafce5b7f48cee79, type: 3}
       propertyPath: m_Size.x
